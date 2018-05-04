@@ -33,7 +33,7 @@
 [Full developer guide](https://developer.android.com/guide/topics/ui/settings).
 Don't forget to update `AndroidManifest.xml`, for instance:
 
-```
+```xml
 <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings">
@@ -50,6 +50,17 @@ Don't forget to update `AndroidManifest.xml`, for instance:
         </activity>
 ```
 Now you can access preferences in JS thread, for instance:
+
+**Update MainApplication.java**
+
+```java
+  @Override
+  public void onCreate() {
+    super.onCreate();
+    ...
+    PreferenceManager.setDefaultValues(this, R.xml.preference/** here is your preferences.xml **/, false);
+  }
+```
 
 **settings.android.js**
 
