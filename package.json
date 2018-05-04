@@ -1,6 +1,6 @@
 {
   "name": "react-native-android-native-app-settings",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "API for getting shared preferences in Android",
   "main": "index.js",
   "keywords": [
@@ -9,6 +9,7 @@
   ],
   "author": "Ivan Kopeykin",
   "license": "MIT",
+  "homepage": "https://github.com/vankop/react-native-android-application-settings",
   "peerDependencies": {
     "react-native": "^0.41.2"
   }
