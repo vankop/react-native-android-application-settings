@@ -54,8 +54,9 @@ Don't forget to update `AndroidManifest.xml`, for instance:
             </intent-filter>
         </activity>
 ```
-**Update MainApplication.java**
+**Update MainApplication.java if you use default values**
 
+If you have problems with preference type use [this guid](https://room-15.github.io/blog/2015/03/30/beware-of-preference-default-values-in-xml/).
 ```java
   @Override
   public void onCreate() {
