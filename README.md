@@ -31,9 +31,19 @@
 **settings.android.js**
 
 ```javascript
-import RNAndroidNativeAppSettings from 'react-native-android-native-app-settings';
+import AppSettings from 'react-native-android-native-app-settings';
+
+const parameter1 = 'parameter1';
+const parameter2 = 'parameter2';
+const parameter3 = 'parameter3';
 
 export default async function getAppSettings() {
-    return await RNAndroidNativeAppSettings.getAll();
+    const [str, int, bool] = await Promise.all([
+        AppSettings.getString(parameter1),
+        AppSettings.getInteger(parameter2),
+        AppSettings.getBoolean(parameter3)
+    ]);
+
+    return { param1: str, param2: int, param3: bool };
 }
 ```
