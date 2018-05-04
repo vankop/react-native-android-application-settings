@@ -1,5 +1,8 @@
 
 # react-native-android-native-app-settings
+[![Version](https://img.shields.io/npm/v/react-native-android-native-app-settings.svg)](https://www.npmjs.com/package/react-native-android-native-app-settings)
+[![Licence](https://img.shields.io/npm/l/react-native-android-native-app-settings.svg)](https://github.com/vankop/react-native-android-application-settings/blob/master/LICENSE)
+[![Known Vulnerabilities](https://snyk.io/test/github/vankop/react-native-android-application-settings/badge.svg?targetFile=package.json)](https://snyk.io/test/github/vankop/react-native-android-application-settings?targetFile=package.json)
 
 ## Getting started
 
