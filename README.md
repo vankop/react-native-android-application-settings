@@ -28,6 +28,29 @@
 
 ## Usage
 
+**Create preferences activity**
+
+[Full developer guide](https://developer.android.com/guide/topics/ui/settings).
+Don't forget to update `AndroidManifest.xml`, for instance:
+
+```
+<activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings">
+            <intent-filter><!-- Use this intent filter to link an activity into your app’s page in Settings, more about app settings https://commonsware.com/blog/2016/08/17/application_preferences-security.html -->
+                <action android:name="android.intent.action.APPLICATION_PREFERENCES" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter><!-- Use this intent filter to deep link this activity, more about deep link https://facebook.github.io/react-native/docs/linking.html#handling-deep-links -->
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="petapp" android:host="settings" />
+            </intent-filter>
+        </activity>
+```
+Now you can access preferences in JS thread, for instance:
+
 **settings.android.js**
 
 ```javascript
