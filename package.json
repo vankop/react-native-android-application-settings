@@ -1,6 +1,6 @@
 {
   "name": "react-native-android-native-app-settings",
-  "version": "0.1.2",
+  "version": "0.1.6",
   "description": "API for getting shared preferences in Android",
   "main": "index.js",
   "keywords": [

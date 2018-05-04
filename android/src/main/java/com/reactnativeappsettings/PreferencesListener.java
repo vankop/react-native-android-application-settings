@@ -4,14 +4,14 @@ import com.facebook.react.bridge.Callback;
 import android.content.SharedPreferences;
 
 public class PreferencesListener implements SharedPreferences.OnSharedPreferenceChangeListener {
-    private Callback callback;
+    private PreferenceChangedEventEmitter emitter;
 
-    PreferencesListener(Callback callback) {
-        this.callback = callback;
+    PreferencesListener(PreferenceChangedEventEmitter emitter) {
+        this.emitter = emitter;
     }
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        this.callback.invoke(key);
+        this.emitter.emit(key);
     }
 }
