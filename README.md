@@ -112,3 +112,40 @@ export default async function getAppSettings() {
 
 Difference between `getFloat` and `getInteger` is in preference type.
 So if you try `getFloat` from integer value, Java will cast it to float and vice versa.
+
+**`listenChanges()`**
+
++ throws error if emitter already exists
+
+Adding event emitter for `preferencesChanged` event. It will emit event each time preference changed.
+`event.key` - Android preference `key`.
+
+Usage:
+
+```javascript
+import AppSettings from 'react-native-android-native-app-settings';
+import { DeviceEventEmitter } from 'react-native';
+
+function listener({ key }) {
+    if (key === 'some') {
+         AppSettings.getString('some');
+    }
+}
+
+export function listenSettings() {
+    AppSettings.listenChanges();
+    DeviceEventEmitter.addListener('preferencesChanged', listener);
+}
+
+export function unlistenSettings() {
+    AppSettings.unlistenChanges();
+    DeviceEventEmitter.removeListener('preferencesChanged', listener);
+}
+
+```
+
+**`unlistenChanges()`**
+
++ throws error if emitter does not listen changes
+
+Stops event emitter.
